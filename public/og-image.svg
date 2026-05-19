@@ -1,0 +1,9 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FBFDFC"/>
+  <rect x="72" y="78" width="1056" height="474" rx="8" fill="#EEF7F5" stroke="#D7E7E4"/>
+  <path d="M140 348C215 250 291 250 366 348C441 446 517 446 592 348C667 250 743 250 818 348C893 446 969 446 1044 348" stroke="#0D827F" stroke-width="22" stroke-linecap="round"/>
+  <path d="M140 420C215 322 291 322 366 420C441 518 517 518 592 420C667 322 743 322 818 420C893 518 969 518 1044 420" stroke="#4664C8" stroke-width="10" stroke-linecap="round" opacity="0.65"/>
+  <text x="140" y="190" fill="#12201F" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="700">MINDWAVE</text>
+  <text x="144" y="252" fill="#50615F" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="500">KUHeS Mental Health Initiative</text>
+  <text x="144" y="514" fill="#075E60" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="600">Changing the conversation around student mental health.</text>
+</svg>

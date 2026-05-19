@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #fbfdfc;
+  --foreground: #12201f;
+  --surface: #ffffff;
+  --surface-muted: #eef7f5;
+  --primary: #0d827f;
+  --primary-strong: #075e60;
+  --secondary: #4664c8;
+  --accent: #8f6ccf;
+  --ink-soft: #50615f;
+  --border: #d7e7e4;
+  --ring: #0d827f;
+}
+
+.dark {
+  --background: #071716;
+  --foreground: #edf8f6;
+  --surface: #0c2322;
+  --surface-muted: #12302f;
+  --primary: #5dd7cf;
+  --primary-strong: #8ce5df;
+  --secondary: #9eb3ff;
+  --accent: #c8b3f1;
+  --ink-soft: #a6beb9;
+  --border: #254642;
+  --ring: #5dd7cf;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-ink-soft: var(--ink-soft);
+  --color-border: var(--border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(238, 247, 245, 0.82), rgba(251, 253, 252, 0.9) 28rem),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+.dark body {
+  background:
+    linear-gradient(180deg, rgba(12, 35, 34, 0.82), rgba(7, 23, 22, 0.92) 28rem),
+    var(--background);
+}
+
+::selection {
+  background: rgba(13, 130, 127, 0.24);
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  outline-color: var(--ring);
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+  outline-color: var(--ring);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.grid-paper {
+  background-image:
+    linear-gradient(rgba(13, 130, 127, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 130, 127, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

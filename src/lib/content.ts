@@ -1,0 +1,726 @@
+import {
+  Activity,
+  BookOpenText,
+  Brain,
+  CalendarDays,
+  CircleHelp,
+  ClipboardCheck,
+  HandHeart,
+  HeartHandshake,
+  Lightbulb,
+  LockKeyhole,
+  Megaphone,
+  MessageCircleHeart,
+  Mic2,
+  ShieldCheck,
+  Sparkles,
+  Stethoscope,
+  Users,
+  Waves,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+export type NavItem = {
+  label: string;
+  href: string;
+};
+
+export type Metric = {
+  value: number;
+  suffix?: string;
+  label: string;
+  detail: string;
+};
+
+export type Program = {
+  title: string;
+  slug: string;
+  summary: string;
+  icon: LucideIcon;
+  outcomes: string[];
+};
+
+export type Event = {
+  title: string;
+  date: string;
+  location: string;
+  format: string;
+  description: string;
+};
+
+export type Resource = {
+  title: string;
+  category: string;
+  summary: string;
+  href: string;
+};
+
+export type Story = {
+  quote: string;
+  author: string;
+  context: string;
+};
+
+export type Article = {
+  title: string;
+  slug: string;
+  category: string;
+  minutes: number;
+  excerpt: string;
+  date: string;
+};
+
+export type PageFeature = {
+  title: string;
+  description: string;
+  icon?: LucideIcon;
+};
+
+export type PageContent = {
+  slug: string;
+  title: string;
+  eyebrow: string;
+  summary: string;
+  heroImage?: string;
+  features?: PageFeature[];
+  sections?: {
+    title: string;
+    body: string;
+    items?: string[];
+  }[];
+  cta?: {
+    label: string;
+    href: string;
+  };
+};
+
+export const siteConfig = {
+  name: "MINDWAVE",
+  title: "MINDWAVE - KUHeS Mental Health Initiative",
+  description:
+    "A student-led mental health initiative at Kamuzu University of Health Sciences advancing awareness, peer support, screenings, and emotionally safe help-seeking.",
+  url: "https://mindwave-kuhes.vercel.app",
+  institution: "Kamuzu University of Health Sciences",
+  location: "Blantyre, Malawi",
+  keywords: [
+    "mental health Malawi",
+    "student mental health",
+    "KUHeS",
+    "mental wellness",
+    "youth mental health",
+    "mental health awareness Malawi",
+  ],
+  contact: {
+    email: "hello@mindwavekuhes.org",
+    kuhesEmail: "registrar@kuhes.ac.mw",
+    phone: "+265 1 810 911",
+    address: "Private Bag 360, Chichiri, Blantyre 3, Malawi",
+  },
+  social: [
+    { label: "Facebook", href: "https://www.facebook.com/" },
+    { label: "Instagram", href: "https://www.instagram.com/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/" },
+    { label: "TikTok", href: "https://www.tiktok.com/" },
+    { label: "Twitter/X", href: "https://x.com/" },
+  ],
+};
+
+export const mainNav: NavItem[] = [
+  { label: "About", href: "/about-us" },
+  { label: "Programs", href: "/programs-services" },
+  { label: "Events", href: "/events" },
+  { label: "Resources", href: "/mental-health-resources" },
+  { label: "Stories", href: "/stories-testimonials" },
+  { label: "Contact", href: "/contact" },
+];
+
+export const footerNav: NavItem[] = [
+  { label: "Mission & Vision", href: "/mission-vision" },
+  { label: "Meet the Team", href: "/meet-the-team" },
+  { label: "Partners", href: "/partners-collaborators" },
+  { label: "Blog", href: "/blog-articles" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Privacy", href: "/privacy-confidentiality-policy" },
+];
+
+export const requiredPageSlugs = [
+  "about-us",
+  "mission-vision",
+  "programs-services",
+  "events",
+  "mental-health-resources",
+  "meet-the-team",
+  "partners-collaborators",
+  "stories-testimonials",
+  "blog-articles",
+  "contact",
+  "join-the-initiative",
+  "donate-sponsor",
+  "faq",
+  "emergency-help-resources",
+  "privacy-confidentiality-policy",
+] as const;
+
+export const heroImages = {
+  students:
+    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=82",
+  counseling:
+    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1600&q=82",
+  campus:
+    "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1600&q=82",
+  journal:
+    "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1600&q=82",
+};
+
+export const values: PageFeature[] = [
+  {
+    title: "Expression",
+    description:
+      "Creating brave, stigma-free channels where students can name what they feel and be met with dignity.",
+    icon: MessageCircleHeart,
+  },
+  {
+    title: "Empathy",
+    description:
+      "Centering peer care, active listening, and referral pathways that respect each student's pace and privacy.",
+    icon: HandHeart,
+  },
+  {
+    title: "Enlightenment",
+    description:
+      "Turning mental health knowledge into practical skills for resilience, belonging, and early help-seeking.",
+    icon: Lightbulb,
+  },
+];
+
+export const metrics: Metric[] = [
+  {
+    value: 9,
+    suffix: "+",
+    label: "Programs",
+    detail: "Awareness, screening, peer support, media, and wellness formats.",
+  },
+  {
+    value: 3,
+    suffix: "",
+    label: "Core Values",
+    detail: "Expression, Empathy, and Enlightenment shape every touchpoint.",
+  },
+  {
+    value: 6,
+    suffix: "+",
+    label: "Audience Groups",
+    detail: "Students, clinicians, administration, NGOs, sponsors, and researchers.",
+  },
+  {
+    value: 1,
+    suffix: "",
+    label: "Safe Space",
+    detail: "A student-led identity built for long-term institutional adoption.",
+  },
+];
+
+export const programs: Program[] = [
+  {
+    title: "Mental Health Literacy Campaigns",
+    slug: "literacy-campaigns",
+    summary:
+      "Campus-wide education that translates complex mental health concepts into clear, compassionate, student-friendly language.",
+    icon: Megaphone,
+    outcomes: ["Stigma reduction", "Early recognition", "Peer-to-peer education"],
+  },
+  {
+    title: "KUHeS Chat Point",
+    slug: "chat-point",
+    summary:
+      "A calm point of entry for students who want to talk, ask questions, or be guided toward the right support pathway.",
+    icon: MessageCircleHeart,
+    outcomes: ["Low-pressure conversations", "Referral guidance", "Belonging"],
+  },
+  {
+    title: "Anonymous Support Systems",
+    slug: "anonymous-support",
+    summary:
+      "Privacy-first request channels that help students reach out before distress becomes a crisis.",
+    icon: LockKeyhole,
+    outcomes: ["Confidential intake", "Triage workflows", "Trusted escalation"],
+  },
+  {
+    title: "Mental Health Screenings",
+    slug: "screenings",
+    summary:
+      "Structured wellbeing checks delivered with clinical guidance, clear consent, and careful follow-up.",
+    icon: ClipboardCheck,
+    outcomes: ["Early support", "Data-informed planning", "Professional referrals"],
+  },
+  {
+    title: "Storytelling Platforms",
+    slug: "storytelling",
+    summary:
+      "Anonymized stories, reflection prompts, and student voices that normalize honest conversations about mental wellbeing.",
+    icon: BookOpenText,
+    outcomes: ["Reduced isolation", "Community voice", "Hopeful recovery narratives"],
+  },
+  {
+    title: "Podcasts & Educational Media",
+    slug: "podcasts-media",
+    summary:
+      "Youth-centered audio, video, and social content with clinicians, students, and wellness advocates.",
+    icon: Mic2,
+    outcomes: ["Accessible learning", "Campus reach", "Credible expert voices"],
+  },
+];
+
+export const events: Event[] = [
+  {
+    title: "Campus Wellness Reset",
+    date: "2026-06-14",
+    location: "KUHeS Blantyre Campus",
+    format: "In-person",
+    description:
+      "A restorative afternoon of grounding practices, peer circles, creative expression, and help-seeking information.",
+  },
+  {
+    title: "Mental Health Literacy Week",
+    date: "2026-07-22",
+    location: "Multi-campus activation",
+    format: "Hybrid",
+    description:
+      "A week of class visits, digital myth-busting, live Q&A sessions, and referral pathway awareness.",
+  },
+  {
+    title: "Stories That Heal",
+    date: "2026-08-09",
+    location: "Online",
+    format: "Virtual",
+    description:
+      "An anonymous storytelling and reflection event focused on resilience, grief, pressure, and belonging.",
+  },
+];
+
+export const resources: Resource[] = [
+  {
+    title: "Stress & Study Pressure Guide",
+    category: "Academic wellbeing",
+    summary:
+      "A practical guide for recognizing overload, planning recovery, and asking for support early.",
+    href: "/mental-health-resources#study-pressure",
+  },
+  {
+    title: "Peer Support Conversation Map",
+    category: "Peer care",
+    summary:
+      "A simple script for checking in on a friend without diagnosing, judging, or taking over.",
+    href: "/mental-health-resources#peer-support",
+  },
+  {
+    title: "Confidential Help Pathways",
+    category: "Support",
+    summary:
+      "How anonymous support, clinical referral, and emergency escalation should work inside MINDWAVE.",
+    href: "/privacy-confidentiality-policy",
+  },
+  {
+    title: "Emergency Help Resources",
+    category: "Urgent help",
+    summary:
+      "Immediate steps for students who may be unsafe, overwhelmed, or supporting someone at risk.",
+    href: "/emergency-help-resources",
+  },
+];
+
+export const stories: Story[] = [
+  {
+    quote:
+      "The first thing that helped was realizing I was not weak for struggling. I was allowed to ask for help before everything collapsed.",
+    author: "Anonymous KUHeS student",
+    context: "Peer support reflection",
+  },
+  {
+    quote:
+      "MINDWAVE gives students language for things they were already carrying silently. That language can become a bridge to care.",
+    author: "Mental wellness collaborator",
+    context: "Partner perspective",
+  },
+  {
+    quote:
+      "I came for information and left with a plan: one friend to call, one place to go, and one small step I could take that night.",
+    author: "Anonymous event participant",
+    context: "Campus wellness event",
+  },
+];
+
+export const articles: Article[] = [
+  {
+    title: "How to Notice Burnout Before It Becomes a Crisis",
+    slug: "notice-burnout-before-crisis",
+    category: "Resilience",
+    minutes: 5,
+    date: "2026-05-03",
+    excerpt:
+      "Burnout is more than tiredness. Learn the early patterns that show up in motivation, sleep, irritability, and disconnection.",
+  },
+  {
+    title: "What to Say When a Friend Says They Are Not Okay",
+    slug: "what-to-say-friend-not-okay",
+    category: "Peer support",
+    minutes: 4,
+    date: "2026-04-18",
+    excerpt:
+      "A practical, non-clinical guide to listening, staying calm, and connecting a friend to the right support.",
+  },
+  {
+    title: "Why Mental Health Literacy Belongs in Health Sciences Education",
+    slug: "mental-health-literacy-health-sciences",
+    category: "Campus culture",
+    minutes: 6,
+    date: "2026-03-27",
+    excerpt:
+      "Future health professionals need the confidence to care for their own wellbeing while serving others with empathy.",
+  },
+];
+
+export const partners = [
+  {
+    name: "Harmony Mental Wellness Solutions Clinic",
+    role: "Clinical and professional support collaborator",
+  },
+  {
+    name: "KUHeS SRC",
+    role: "Student representation, mobilization, and institutional connection",
+  },
+  {
+    name: "Rotary Club",
+    role: "Community service, outreach, and sponsorship partner",
+  },
+];
+
+export const teamRoles = [
+  {
+    name: "Student Initiative Lead",
+    role: "Strategy, partnerships, and student mobilization",
+    focus: "Builds the long-term operating rhythm and keeps the initiative student-owned.",
+  },
+  {
+    name: "Peer Support Coordinator",
+    role: "Safe spaces, referrals, and volunteer training",
+    focus: "Designs peer check-in structures that are warm, ethical, and escalation-aware.",
+  },
+  {
+    name: "Clinical Advisor",
+    role: "Professional guidance and screening governance",
+    focus: "Reviews referral pathways, risk handling, and mental health literacy accuracy.",
+  },
+  {
+    name: "Creative & Media Lead",
+    role: "Campaign storytelling, podcasts, and digital education",
+    focus: "Turns evidence-informed messages into content students actually engage with.",
+  },
+];
+
+export const faqs = [
+  {
+    question: "Is MINDWAVE a counseling clinic?",
+    answer:
+      "MINDWAVE is a student-led mental health initiative, not a replacement for professional care. It helps students learn, connect, ask for support, and reach appropriate professionals when needed.",
+  },
+  {
+    question: "Can I ask for help anonymously?",
+    answer:
+      "Yes. Anonymous support channels are designed for low-pressure first contact. If there is immediate risk to safety, MINDWAVE may guide the student toward urgent professional or emergency support.",
+  },
+  {
+    question: "Who can join the initiative?",
+    answer:
+      "KUHeS students, peer advocates, clinical mentors, researchers, sponsors, and collaborators can all contribute through roles suited to their expertise and availability.",
+  },
+  {
+    question: "How are stories protected?",
+    answer:
+      "Stories should be shared only with informed consent, identifying details removed, and editorial review focused on safety, dignity, and non-sensational language.",
+  },
+  {
+    question: "Can organizations sponsor MINDWAVE?",
+    answer:
+      "Yes. Sponsorship can support screenings, campus events, media production, training, research, and long-term platform infrastructure.",
+  },
+];
+
+export const emergencyContacts = [
+  {
+    label: "Ambulance",
+    value: "998",
+    detail: "Listed by GOV.UK for emergency services in Malawi.",
+  },
+  {
+    label: "Police",
+    value: "990 or 997",
+    detail: "Listed by GOV.UK; U.S. State Department also lists 997.",
+  },
+  {
+    label: "Fire",
+    value: "999",
+    detail: "Listed by GOV.UK for Malawi emergency services.",
+  },
+  {
+    label: "KUHeS general line",
+    value: "+265 1 810 911",
+    detail: "Published KUHeS contact line for campus-related direction.",
+  },
+];
+
+export const pages: Record<string, PageContent> = {
+  "about-us": {
+    slug: "about-us",
+    title: "About MINDWAVE",
+    eyebrow: "Student-led. Clinically aware. Built for campus trust.",
+    summary:
+      "MINDWAVE is the KUHeS Mental Health Initiative: a student-led platform for awareness, peer support, resilience, and healthy help-seeking across the university community.",
+    heroImage: heroImages.campus,
+    features: values,
+    sections: [
+      {
+        title: "Why MINDWAVE exists",
+        body: "Health sciences students carry academic intensity, clinical exposure, financial pressures, transitions, grief, and social expectations. MINDWAVE creates a visible, credible, and emotionally safe identity for mental wellbeing on campus.",
+        items: [
+          "Normalize mental health conversations before distress becomes silent.",
+          "Create safe peer entry points linked to professional guidance.",
+          "Build a sustainable initiative that can be adopted institutionally.",
+        ],
+      },
+      {
+        title: "How we work",
+        body: "The initiative blends student voice, evidence-informed education, campus partnerships, and referral-aware support pathways. Every program is designed to be welcoming, culturally grounded, and careful about privacy.",
+      },
+    ],
+    cta: { label: "Join the initiative", href: "/join-the-initiative" },
+  },
+  "mission-vision": {
+    slug: "mission-vision",
+    title: "Mission & Vision",
+    eyebrow: "Crafting minds. Nourishing safe spaces.",
+    summary:
+      "MINDWAVE empowers students with mental health awareness, support systems, resilience, and healthy help-seeking behaviors while normalizing conversations around mental wellbeing.",
+    heroImage: heroImages.journal,
+    features: [
+      {
+        title: "Mission",
+        description:
+          "To empower students with mental health awareness, support systems, resilience, and healthy help-seeking behaviors while normalizing conversations around mental well-being.",
+        icon: Brain,
+      },
+      {
+        title: "Vision",
+        description:
+          "To craft minds and nourish a safe space of students ready to navigate life and mental wellness positively.",
+        icon: Sparkles,
+      },
+      {
+        title: "Long-term intent",
+        description:
+          "To institutionalize student mental wellness support as a respected, data-informed, and partnership-ready part of KUHeS life.",
+        icon: ShieldCheck,
+      },
+    ],
+  },
+  "programs-services": {
+    slug: "programs-services",
+    title: "Programs & Services",
+    eyebrow: "Practical support for real student life.",
+    summary:
+      "From campaigns and screenings to anonymous help pathways and digital media, MINDWAVE turns mental health awareness into action students can use.",
+    heroImage: heroImages.students,
+    sections: [
+      {
+        title: "Objectives",
+        body: "MINDWAVE is designed for sustainable mental health interventions, professional connection, peer-support safe spaces, mental health literacy, screenings, healthy coping mechanisms, and long-term institutional adoption.",
+      },
+    ],
+    cta: { label: "Request support", href: "/contact#anonymous-help" },
+  },
+  events: {
+    slug: "events",
+    title: "Events",
+    eyebrow: "Campus moments that make care visible.",
+    summary:
+      "MINDWAVE events bring students together for education, reflection, screening, creative expression, and connection to credible support pathways.",
+    heroImage: heroImages.students,
+    cta: { label: "Register for an event", href: "/events#register" },
+  },
+  "mental-health-resources": {
+    slug: "mental-health-resources",
+    title: "Mental Health Resources",
+    eyebrow: "Plain-language tools for awareness and next steps.",
+    summary:
+      "Explore student-centered resources, a non-diagnostic wellbeing pulse, and recommendations that guide students toward the right kind of support.",
+    heroImage: heroImages.journal,
+    cta: { label: "Get urgent help", href: "/emergency-help-resources" },
+  },
+  "meet-the-team": {
+    slug: "meet-the-team",
+    title: "Meet the Team",
+    eyebrow: "Student leadership with professional guidance.",
+    summary:
+      "MINDWAVE is structured around student initiative, peer support, creative education, and clinical advisory capacity.",
+    heroImage: heroImages.counseling,
+  },
+  "partners-collaborators": {
+    slug: "partners-collaborators",
+    title: "Partners & Collaborators",
+    eyebrow: "A stronger campus network through trusted relationships.",
+    summary:
+      "MINDWAVE is built for collaboration with mental health professionals, student leadership, community service organizations, funders, and researchers.",
+    heroImage: heroImages.campus,
+    cta: { label: "Partner with MINDWAVE", href: "/donate-sponsor" },
+  },
+  "stories-testimonials": {
+    slug: "stories-testimonials",
+    title: "Stories & Testimonials",
+    eyebrow: "Student voice, protected with dignity.",
+    summary:
+      "Anonymized stories help students feel less alone while protecting identity, consent, and emotional safety.",
+    heroImage: heroImages.journal,
+  },
+  "blog-articles": {
+    slug: "blog-articles",
+    title: "Blog & Articles",
+    eyebrow: "Evidence-informed mental wellness content.",
+    summary:
+      "Short, practical articles for students, peer supporters, administrators, and partners interested in youth mental health.",
+    heroImage: heroImages.journal,
+  },
+  contact: {
+    slug: "contact",
+    title: "Contact MINDWAVE",
+    eyebrow: "Reach out with care, partnership, or support needs.",
+    summary:
+      "Use the contact form for collaborations, media, event invitations, sponsorship, or general questions. Students can also use the anonymous support form.",
+    heroImage: heroImages.counseling,
+  },
+  "join-the-initiative": {
+    slug: "join-the-initiative",
+    title: "Join the Initiative",
+    eyebrow: "Bring your voice, skill, and care to the movement.",
+    summary:
+      "MINDWAVE welcomes students and collaborators who want to support mental health literacy, peer spaces, events, media, research, and partnerships.",
+    heroImage: heroImages.students,
+  },
+  "donate-sponsor": {
+    slug: "donate-sponsor",
+    title: "Donate or Sponsor",
+    eyebrow: "Fund mental wellness infrastructure that students can trust.",
+    summary:
+      "Sponsorship helps MINDWAVE deliver screenings, student events, educational media, peer-support training, research, and scalable technology.",
+    heroImage: heroImages.campus,
+  },
+  faq: {
+    slug: "faq",
+    title: "FAQ",
+    eyebrow: "Clear answers for students, partners, and university stakeholders.",
+    summary:
+      "Understand what MINDWAVE does, how privacy works, and how students or organizations can get involved.",
+    heroImage: heroImages.journal,
+  },
+  "emergency-help-resources": {
+    slug: "emergency-help-resources",
+    title: "Emergency Help Resources",
+    eyebrow: "Immediate steps when safety cannot wait.",
+    summary:
+      "If you or someone nearby may be in immediate danger, contact emergency services, go to the nearest health facility, or alert a trusted person who can stay with you.",
+    heroImage: heroImages.counseling,
+  },
+  "privacy-confidentiality-policy": {
+    slug: "privacy-confidentiality-policy",
+    title: "Privacy & Confidentiality Policy",
+    eyebrow: "Trust depends on careful boundaries.",
+    summary:
+      "MINDWAVE should protect student dignity through informed consent, minimal data collection, secure handling, and clear escalation protocols for safety concerns.",
+    heroImage: heroImages.journal,
+    sections: [
+      {
+        title: "Confidentiality principles",
+        body: "MINDWAVE treats personal stories and help requests as sensitive information. Access should be limited to trained team members or professionals who need the information to respond safely.",
+        items: [
+          "Collect the least amount of personal data needed.",
+          "Explain when confidentiality may need to be broken for immediate safety.",
+          "Use consent-first storytelling and remove identifying details.",
+          "Store submissions in secure, access-controlled systems before launch.",
+        ],
+      },
+      {
+        title: "Anonymous support",
+        body: "Anonymous requests can reduce fear and stigma, but they must not promise impossible secrecy. If a student shares imminent risk, the response pathway should prioritize safety and professional escalation.",
+      },
+      {
+        title: "Future platform data",
+        body: "When database, authentication, analytics, and CMS features are connected, MINDWAVE should maintain audit logs, role-based access, retention policies, and secure backups.",
+      },
+    ],
+  },
+};
+
+export const adminModules = [
+  {
+    title: "Submissions",
+    description: "Review contact, join, sponsor, and anonymous support intake.",
+    icon: ClipboardCheck,
+  },
+  {
+    title: "Events",
+    description: "Publish events, monitor registrations, and export attendee lists.",
+    icon: CalendarDays,
+  },
+  {
+    title: "Resources",
+    description: "Manage blog posts, FAQs, media, and recommended support pathways.",
+    icon: BookOpenText,
+  },
+  {
+    title: "Analytics",
+    description: "Track engagement, referrals, campaign reach, and impact metrics.",
+    icon: Activity,
+  },
+  {
+    title: "Roles",
+    description: "Segment access for admins, peer supporters, advisors, and editors.",
+    icon: Users,
+  },
+  {
+    title: "Safeguarding",
+    description: "Escalation logs, privacy reviews, and emergency response handoffs.",
+    icon: ShieldCheck,
+  },
+];
+
+export const objectiveFeatures: PageFeature[] = [
+  {
+    title: "Sustainable interventions",
+    description: "Design repeatable programs that can outlast a single student cohort.",
+    icon: Waves,
+  },
+  {
+    title: "Professional connection",
+    description: "Link students to qualified mental health professionals when care needs grow.",
+    icon: Stethoscope,
+  },
+  {
+    title: "Peer safe spaces",
+    description: "Train and support peer advocates without turning them into clinicians.",
+    icon: HeartHandshake,
+  },
+  {
+    title: "Mental health literacy",
+    description: "Make accurate, non-judgmental mental health knowledge easy to access.",
+    icon: Brain,
+  },
+  {
+    title: "Screening pathways",
+    description: "Use consent, privacy, and clinical oversight for wellbeing checks.",
+    icon: ClipboardCheck,
+  },
+  {
+    title: "Healthy coping",
+    description: "Promote practical, culturally grounded habits for resilience and recovery.",
+    icon: CircleHelp,
+  },
+];
