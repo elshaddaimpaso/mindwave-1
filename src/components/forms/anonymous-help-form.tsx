@@ -28,7 +28,7 @@ export function AnonymousHelpForm() {
       urgency: "medium",
       contactPreference: "anonymous",
       contact: "",
-      safety: false,
+      safety: true,
     },
   });
 

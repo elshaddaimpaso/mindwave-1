@@ -32,7 +32,7 @@ export function JoinForm() {
       email: "",
       role: roles[0],
       motivation: "",
-      consent: false,
+      consent: true,
     },
   });
 

@@ -90,6 +90,14 @@ export function SiteFooter() {
           © {new Date().getFullYear()} MINDWAVE - KUHeS Mental Health
           Initiative. Built for awareness, connection, and care.
         </p>
+        <div className="mt-2">
+          <Link
+            href="/admin/login"
+            className="text-slate-500 hover:text-slate-400 transition-colors"
+          >
+            Admin
+          </Link>
+        </div>
       </div>
     </footer>
   );

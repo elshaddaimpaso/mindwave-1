@@ -32,7 +32,7 @@ export function ContactForm() {
       email: "",
       topic: "General inquiry",
       message: "",
-      consent: false,
+      consent: true,
     },
   });
 
